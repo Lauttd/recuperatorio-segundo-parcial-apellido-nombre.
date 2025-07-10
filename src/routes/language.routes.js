@@ -9,6 +9,7 @@ import {
 
 export const router = Router();
 
+//Rutas para cada caso.
 router.post("/api/languages", createLanguages);
 router.get("/api/languages", getAllLanguages);
 router.get("/api/languages/:id", getByIdLanguages);
