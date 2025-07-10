@@ -40,9 +40,17 @@ export const getAllLanguages = async (req, res) => {
     const obtenerLanguage = await languagemodel.findAll(req.body);
     return res.status(201).json(obtenerLanguage);
   } catch (error) {
+<<<<<<< HEAD
     res.status(404).json({
       message: "Error por parte del servidor al obtener los lenguajes",
     });
+=======
+    res
+      .status(404)
+      .json({
+        message: "Error por parte del servidor al obtener los lenguajes",
+      });
+>>>>>>> 38a744f (se configuro el CRUD basico)
   }
 };
 
@@ -106,8 +114,16 @@ export const deleteLanguages = async (req, res) => {
         .json({ message: "se elimino el lenguaje", borrarLanguage });
     else res.status(400).json({ message: "no se encontro el lenguaje" });
   } catch (error) {
+<<<<<<< HEAD
     res.status(404).json({
       message: "Error por parte del servidor al eliminar el lenguaje",
     });
+=======
+    res
+      .status(404)
+      .json({
+        message: "Error por parte del servidor al eliminar el lenguaje",
+      });
+>>>>>>> 38a744f (se configuro el CRUD basico)
   }
 };
