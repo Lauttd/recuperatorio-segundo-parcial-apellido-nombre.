@@ -1,5 +1,5 @@
 import express from "express";
-import router from "./src/routes/movies.routes.js";
+import router from "./src/routes/language.routes.js";
 import dotenv from "dotenv";
 import { initDB } from "./src/config/database.js";
 

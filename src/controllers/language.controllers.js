@@ -3,7 +3,7 @@ import { languagemodel } from "../models/language.model.js";
 export const createLanguages = async (req, res) => {
   try {
     const crearLanguages = await languagemodel.create(req.body);
-    return res.status(201).json(crearLanguages);
+    return res.status(200).json(crearLanguages);
   } catch (error) {
     res
       .status(404)
@@ -16,11 +16,9 @@ export const getAllLanguages = async (req, res) => {
     const obtenerLanguage = await languagemodel.findAll(req.body);
     return res.status(201).json(obtenerLanguage);
   } catch (error) {
-    res
-      .status(404)
-      .json({
-        message: "Error por parte del servidor al obtener los lenguajes",
-      });
+    res.status(404).json({
+      message: "Error por parte del servidor al obtener los lenguajes",
+    });
   }
 };
 
@@ -56,16 +54,14 @@ export const deleteLanguages = async (req, res) => {
     const borrarLanguage = await languagemodel.destroy({
       where: { id: req.params.id },
     });
-    if (borrarMovies)
+    if (borrarLanguage)
       res
         .status(200)
         .json({ message: "se elimino el lenguaje", borrarLanguage });
     else res.status(400).json({ message: "no se encontro el lenguaje" });
   } catch (error) {
-    res
-      .status(404)
-      .json({
-        message: "Error por parte del servidor al eliminar el lenguaje",
-      });
+    res.status(404).json({
+      message: "Error por parte del servidor al eliminar el lenguaje",
+    });
   }
 };

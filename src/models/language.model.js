@@ -1,11 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database.js";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 //modelo q va a tener la base de datos
-export const languagemodel = sequelize.define("lagunagemodel", {
+export const languagemodel = sequelize.define("language", {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
