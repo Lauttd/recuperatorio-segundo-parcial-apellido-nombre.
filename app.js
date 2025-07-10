@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use("/", router);
 
+//Inciar servdidor
 initDB().then(() => {
   app.listen(port, () => {
     console.log(`conectado en http://localhost:${port}`);
